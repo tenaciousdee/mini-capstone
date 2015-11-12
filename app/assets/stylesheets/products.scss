@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$headlines: #261919;
+$brown: #341b1b;
 
 .container {
 
   h1, h2, h3, h4, h5, h6 {
-    color: $headlines;
+    color: $brown;
+  }
+
+  img {
+    max-width: 100%;
+    margin-bottom: .5em;
+  }
+
+  .btn {
+    background-color: $brown;
+    border: 0;
   }
 }
