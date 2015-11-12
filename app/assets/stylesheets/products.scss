@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $brown: #341b1b;
+$font-bd: Georgia, "Times New Roman", Times, serif;
 
 .container {
 
@@ -11,12 +12,16 @@ $brown: #341b1b;
   }
 
   img {
-    max-width: 100%;
-    margin-bottom: .5em;
+    margin-bottom: 1.3em;
   }
 
   .btn {
     background-color: $brown;
     border: 0;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-family: $font-bd;
   }
 }
