@@ -14,11 +14,26 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(
       name: params[:name],
-      price: params[:image],
+      price: params[:price],
       image: params[:image],
       description: params[:description]
       )
 
     redirect_to action: "index"
+  end
+
+  def edit
+    @product = Product.find_by(id: params[:id])
+  end
+
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.update(
+      name: params[:name],
+      price: params[:price],
+      image: params[:image],
+      description: params[:description]
+      )
+    redirect_to "products/#{@product.id}"
   end
 end
