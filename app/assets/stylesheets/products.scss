@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$brown: #341b1b;
+$brown: #774F38;
 $font-bd: Georgia, "Times New Roman", Times, serif;
 
 .container {
@@ -13,6 +13,7 @@ $font-bd: Georgia, "Times New Roman", Times, serif;
 
   img {
     margin-bottom: 1.3em;
+    border: 4px solid $brown;
   }
 
   .btn {
