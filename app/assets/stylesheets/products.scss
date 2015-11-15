@@ -3,26 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $brown: #774F38;
+$white: #fff;
+
 $font-bd: Georgia, "Times New Roman", Times, serif;
+$bold: bold;
 
-.container {
 
-  h1, h2, h3, h4, h5, h6 {
-    color: $brown;
-  }
+h1, h2, h3, h4, h5, h6 {
+  color: $brown;
+  font-weight: $bold;
+}
 
-  img {
-    margin-bottom: 1.3em;
-    border: 4px solid $brown;
-  }
+img {
+  margin-bottom: 1.3em;
+  border: 4px solid $brown;
+}
 
-  .btn {
-    background-color: $brown;
-    border: 0;
-    margin-bottom: 1em;
-  }
+.btn {
+  background-color: $brown;
+  border: 0;
+  margin-bottom: 1em;
+  color: $white;
+}
 
-  p {
-    font-family: $font-bd;
-  }
+p {
+  font-family: $font-bd;
 }
