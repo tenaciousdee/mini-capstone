@@ -34,6 +34,15 @@ class ProductsController < ApplicationController
       image: params[:image],
       description: params[:description]
       )
-    redirect_to "products/#{@product.id}"
+
+    redirect_to action: "show"
   end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+
+    redirect_to action: "index"
+  end
+
 end

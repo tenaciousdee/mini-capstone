@@ -4,6 +4,9 @@
 
 $brown: #774F38;
 $white: #fff;
+$well: #D5DED9;
+$links: #7A6A53;
+$hover: #E08E79;
 
 $font-bd: Georgia, "Times New Roman", Times, serif;
 $bold: bold;
@@ -12,6 +15,18 @@ $bold: bold;
 h1, h2, h3, h4, h5, h6 {
   color: $brown;
   font-weight: $bold;
+}
+
+a {
+  color: $links;
+}
+
+a:hover {
+  color: $hover;
+}
+
+.well {
+  background-color: $well;
 }
 
 img {
@@ -26,6 +41,23 @@ img {
   color: $white;
 }
 
+.btn:hover {
+  background-color: $hover;
+  color: $white;
+}
+
+.btn a:hover {
+  color: $white;
+}
+
 p {
   font-family: $font-bd;
+}
+
+button a {
+  color: $white;
+}
+
+.single-img {
+  margin-top: 3em;
 }
