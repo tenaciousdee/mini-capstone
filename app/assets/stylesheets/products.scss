@@ -11,6 +11,9 @@ $hover: #E08E79;
 $font-bd: Georgia, "Times New Roman", Times, serif;
 $bold: bold;
 
+$none: none;
+$zero: 0;
+
 
 h1, h2, h3, h4, h5, h6 {
   color: $brown;
@@ -19,6 +22,21 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: $links;
+}
+
+.container-fluid {
+  padding: $zero;
+  
+  .jumbotron {
+    border: $none;
+    padding: 0;
+    background: $none;
+  }
+
+  img {
+    max-width: 100%;
+    border: $none;
+  }
 }
 
 a:hover {
