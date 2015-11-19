@@ -1,0 +1,70 @@
+$brown: #774F38;
+$white: #fff;
+$well: #D5DED9;
+$links: #7A6A53;
+$hover: #E08E79;
+
+$font-hd: Futura,"Trebuchet MS",Arial,sans-serif;
+$font-bd: Garamond,Baskerville,"Baskerville Old Face","Hoefler Text","Times New Roman",serif;
+$bold: bold;
+
+$none: none;
+$zero: 0;
+
+body {
+  background-image: url('geometry2.png');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $brown;
+  font-weight: $bold;
+  font-family: $font-hd;
+}
+
+a {
+  color: $links;
+}
+
+a:hover {
+  color: $hover;
+}
+
+.well {
+  background-color: $well;
+
+  .btn {
+    margin-bottom: 1em;
+  }
+}
+
+img {
+  margin-bottom: 1.3em;
+  border: 4px solid $brown;
+}
+
+.btn {
+  background-color: $brown;
+  border: 0;
+  color: $white;
+}
+
+.btn:hover {
+  background-color: $hover;
+  color: $white;
+}
+
+.btn a:hover {
+  color: $white;
+}
+
+p {
+  font-family: $font-bd;
+}
+
+button a {
+  color: $white;
+}
+
+.single-img {
+  margin-top: 3em;
+}

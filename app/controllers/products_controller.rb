@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
       description: params[:description]
       )
 
+    flash[:success] = "Contact was successfully created"
     redirect_to action: "index"
   end
 
@@ -35,6 +36,8 @@ class ProductsController < ApplicationController
       description: params[:description]
       )
 
+
+    flash[:success] = "Contact was successfully updated"
     redirect_to action: "show"
   end
 
