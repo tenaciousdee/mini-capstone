@@ -48,7 +48,7 @@ img {
   color: $white;
 }
 
-.btn:hover {
+.btn:hover, .btn:active, .btn:visited, .btn:focus {
   background-color: $hover;
   color: $white;
 }
