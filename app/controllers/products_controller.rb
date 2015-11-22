@@ -12,11 +12,6 @@ class ProductsController < ApplicationController
     if sort_sale
       @products = Product.where("price < ?", 13)
     end
-
-    sort_random = params[:sort_random]
-    if sort_random
-      @products = Product.where("name = ?", sort_random)
-  end
     
   end
 
