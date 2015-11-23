@@ -60,4 +60,11 @@ class ProductsController < ApplicationController
     redirect_to action: "index"
   end
 
+  def search
+    search = params[:input_search]
+    @products = Product.where("name LIKE ?", "%#{search}%")
+
+    render :index
+  end
+
 end
