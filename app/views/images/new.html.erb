@@ -2,8 +2,8 @@
 <%= form_tag '/images', method: :post do %>
 
 <div class="form-group">
-  <%= label_tag :image %>
-  <%= text_field_tag :image, nil, class: "form-control", placeholder: "Image URL" %>
+  <%= label_tag :url %>
+  <%= text_field_tag :url, nil, class: "form-control", placeholder: "Image URL" %>
 </div>
 
 <div class="form-group">
@@ -12,6 +12,6 @@
 </div>
 
 <div>
-  <%= button_tag 'Create New Product', class: "btn btn-defaul" %>
+  <%= button_tag 'Add New Image', class: "btn btn-defaul" %>
 </div>
 <% end %>

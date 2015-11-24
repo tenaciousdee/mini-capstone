@@ -9,6 +9,6 @@ class ImagesController < ApplicationController
       )
 
     flash[:success] = "Product was successfully created"
-    redirect_to action: "index"
+    redirect_to "/"
   end
 end
