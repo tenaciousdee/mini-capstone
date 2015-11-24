@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124025402) do
+ActiveRecord::Schema.define(version: 20151124032229) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url",        limit: 255
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151124025402) do
     t.datetime "updated_at",                                             null: false
     t.boolean  "inventory_status"
     t.integer  "supplier_id",      limit: 4
+    t.integer  "user_id",          limit: 4
   end
 
   create_table "suppliers", force: :cascade do |t|

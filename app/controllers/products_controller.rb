@@ -44,8 +44,8 @@ class ProductsController < ApplicationController
     product.update(
       name: params[:name],
       price: params[:price],
-      image: params[:image],
-      description: params[:description]
+      description: params[:description],
+      user_id: current_user.id
       )
 
 
