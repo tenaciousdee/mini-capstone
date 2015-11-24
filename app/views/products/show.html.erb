@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-lg-9">
-  <img class="img-responsive single-img" src="<%= @product.image %>" alt="coffee picture" />
+  <% @product.images.each do |image| %>
+  <img class="img-responsive img-circle" src="<%= image.url %>" alt="coffee picture" />
+  <% end %>
   </div>
   <div class="col-lg-3">
     <h3><%= @product.name %></h3>

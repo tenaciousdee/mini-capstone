@@ -6,7 +6,7 @@
         <div class="well well-lg">
             <h3><a href="/products/<%= product.id %>"><%= product.name %></a></h3>
             <p><i>by</i> <%= product.supplier.name %></p>
-            <img class="img-responsive img-circle" src="<%= product.image %>" alt="coffee picture" />
+            <img class="img-responsive img-circle" src="<%= product.images.first.url if product.images.first %>" alt="coffee picture" />
             <button type="button" class="btn btn-info"><%= number_to_currency(product.price) %></button>
             <p><%= product.description %></p>
             <button type="button" class="btn btn-block"><span class="glyphicon glyphicon-ok"></span> Buy Me</button>
