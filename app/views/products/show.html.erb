@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-lg-9">
-  <% @product.images.each do |image| %>
-  <img class="img-responsive img-circle" src="<%= image.url %>" alt="coffee picture" />
-  <% end %>
+    <% @product.images.each do |image| %>
+    <img class="img-responsive img-circle" src="<%= image.url %>" alt="coffee picture" />
+    <% end %>
   </div>
   <div class="col-lg-3">
     <h3><%= @product.name %></h3>
@@ -11,9 +11,23 @@
     <p>Tax: <%= number_to_currency(@product.tax) %></p>
     <p>Total: <%= number_to_currency(@product.total) %></p>
     <p><%= @product.description %></p>
-    <button type="button" class="btn btn-block"><span class="glyphicon glyphicon-ok"></span> Buy this product</button>
+    <!-- <button type="button" class="btn btn-block"><span class="glyphicon glyphicon-ok"></span> Buy this product</button> -->
     <button class="btn btn-block"><span class="glyphicon glyphicon-wrench"></span> <%= link_to "Edit this product", "/products/#{@product.id}/edit" %></button>
     <button class="btn btn-block"><span class="glyphicon glyphicon-arrow-left"></span> <%= link_to "Back to all products", "/products" %></button>
     <button class="btn btn-block"><span class="glyphicon glyphicon-remove"></span> <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></button>
+
+    <%= form_tag '/orders', method: :post do %>
+    <div class="form-group">
+      <%= label_tag :quantity %>
+      <%= text_field_tag :quantity, nil, class: "form-control", placeholder: "Quantity of products" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :product_id %>
+      <%= text_field_tag :product_id, nil, class: "form-control", placeholder: "Enter your Product ID" %>
+    </div>
+    <div>
+      <%= button_tag 'Buy Now!', class: "btn btn-block" %>
+    </div>
+    <% end %>
   </div>
 </div>

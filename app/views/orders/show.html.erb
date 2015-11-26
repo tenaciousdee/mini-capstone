@@ -1,0 +1,6 @@
+<h1>Order complete!</h1>
+<p>Your order id # is <%= @order.id %></p>
+<p>You ordered <%= @order.quantity %> products</p>
+<p>The tax for this product is <%= number_to_currency(@order.product_tax) %></p>
+<p>The subtotal for this product is <%= number_to_currency(@order.product_subtotal) %></p>
+<p>The total for this order is <%= number_to_currency(@order.product_total) %></p>
