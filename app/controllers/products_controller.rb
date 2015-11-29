@@ -12,6 +12,9 @@ class ProductsController < ApplicationController
     if sort_sale
       @products = Product.where("price < ?", 13)
     end
+    if params[:category]
+      @products = Category.find_by(name: params[:category]).products
+    end
     
   end
 

@@ -6,12 +6,14 @@
   </div>
   <div class="col-lg-3">
     <h3><%= @product.name %></h3>
+    <% @product.categories.each do |cat| %>
+    <p><em><%= cat.name.capitalize %></em></p>
+    <% end %>
     <p><%= @product.sale_message %></p>
     <button type="button" class="btn btn-info"><%= number_to_currency(@product.price) %></button>
     <p>Tax: <%= number_to_currency(@product.tax) %></p>
     <p>Total: <%= number_to_currency(@product.total) %></p>
     <p><%= @product.description %></p>
-    <!-- <button type="button" class="btn btn-block"><span class="glyphicon glyphicon-ok"></span> Buy this product</button> -->
     <button class="btn btn-block"><span class="glyphicon glyphicon-wrench"></span> <%= link_to "Edit this product", "/products/#{@product.id}/edit" %></button>
     <button class="btn btn-block"><span class="glyphicon glyphicon-arrow-left"></span> <%= link_to "Back to all products", "/products" %></button>
     <button class="btn btn-block"><span class="glyphicon glyphicon-remove"></span> <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></button>
