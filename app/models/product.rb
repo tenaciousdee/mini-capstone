@@ -23,4 +23,12 @@ class Product < ActiveRecord::Base
   def total
     price + tax
   end
+
+  def printable_categories
+    names = []
+    categories.each do |category|
+      names << category.name.capitalize
+    end
+    names.join(', ')
+  end
 end

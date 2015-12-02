@@ -6,9 +6,7 @@
   </div>
   <div class="col-lg-3">
     <h3><%= @product.name %></h3>
-    <% @product.categories.each do |cat| %>
-    <p><em><%= cat.name.capitalize %></em></p>
-    <% end %>
+    <p><i>Categories: <%= @product.printable_categories %></i></p>
     <p><%= @product.sale_message %></p>
     <button type="button" class="btn btn-info"><%= number_to_currency(@product.price) %></button>
     <p>Tax: <%= number_to_currency(@product.tax) %></p>
