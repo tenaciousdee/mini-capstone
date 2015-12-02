@@ -1,0 +1,8 @@
+<% @carted.each do |cart| %>
+<p><%= cart.product.name %></p>
+<img class="img-responsive" src="<%= cart.product.images.first.url %>" alt="coffee picture" />
+<% end %>
+
+<div>
+  <%= button_to "Buy Now!", "/orders", class: "btn btn-default", method: :post %>
+</div>
