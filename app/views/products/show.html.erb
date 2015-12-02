@@ -16,7 +16,7 @@
     <button class="btn btn-block"><span class="glyphicon glyphicon-arrow-left"></span> <%= link_to "Back to all products", "/products" %></button>
     <button class="btn btn-block"><span class="glyphicon glyphicon-remove"></span> <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></button>
 
-    <%= form_tag '/orders', method: :post do %>
+    <%= form_tag '/carted_products', method: :post do %>
     <div class="form-group">
       <%= label_tag :quantity %>
       <%= text_field_tag :quantity, nil, class: "form-control", placeholder: "Quantity of products" %>
@@ -25,7 +25,7 @@
       <%= hidden_field_tag :product_id, @product.id, class: "form-control", placeholder: "Enter your Product ID" %>
     </div>
     <div>
-      <%= button_tag 'Buy Now!', class: "btn btn-block" %>
+      <%= button_tag 'Add To Cart', class: "btn btn-block" %>
     </div>
     <% end %>
   </div>
