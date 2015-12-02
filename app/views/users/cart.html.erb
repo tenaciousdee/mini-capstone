@@ -1,5 +1,6 @@
 <% @carted.each do |cart| %>
 <p><%= cart.product.name %></p>
+<p><%= number_to_currency(cart.product.price) %></p>
 <img class="img-responsive" src="<%= cart.product.images.first.url %>" alt="coffee picture" />
 <% end %>
 
