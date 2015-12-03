@@ -4,6 +4,17 @@
 <img class="img-responsive" src="<%= cart.product.images.first.url %>" alt="coffee picture" />
 <% end %>
 
-<div>
-  <%= button_to "Buy Now!", "/orders", class: "btn btn-default", method: :post %>
+<%= form_tag '/orders', method: :post do %>
+<div class="form-group">
+  <%= hidden_field_tag :subtotal, @subtotal, class: "form-control" %>
 </div>
+<div class="form-group">
+  <%= hidden_field_tag :tax, @tax, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= hidden_field_tag :total, @total, class: "form-control" %>
+</div>
+<div>
+<%= button_tag 'Order Now', class: "btn btn-default" %>
+</div>
+<% end %>
