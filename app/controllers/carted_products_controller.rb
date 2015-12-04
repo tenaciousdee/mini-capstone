@@ -11,6 +11,12 @@ class CartedProductsController < ApplicationController
     redirect_to "/users/#{current_user.id}/cart"
   end
 
+  def edit
+  end
+
   def show
+  end
+
+  def destroy
   end
 end

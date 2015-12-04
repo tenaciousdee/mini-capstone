@@ -1,15 +1,18 @@
 class OrdersController < ApplicationController
   def create
+    @carted = CartedProduct.where(user_id: current_user.id, status: "carted")
 
-    order = Order.create(
+    @order = Order.create(
       user_id: current_user.id,
       subtotal: params[:subtotal],
       tax: params[:tax],
       total: params[:total]
     )
 
+    @carted.update_all(status: "purchased", order_id: @order.id)
+
     flash[:success] = "Order was successfully created"
-    redirect_to "/orders/#{order.id}"
+    redirect_to "/orders/#{@order.id}"
 
   end
 
