@@ -12,9 +12,11 @@
     <p>Tax: <%= number_to_currency(@product.tax) %></p>
     <p>Total: <%= number_to_currency(@product.total) %></p>
     <p><%= @product.description %></p>
+    <% if current_user && current_user.admin %>
     <button class="btn btn-block"><span class="glyphicon glyphicon-wrench"></span> <%= link_to "Edit this product", "/products/#{@product.id}/edit" %></button>
-    <button class="btn btn-block"><span class="glyphicon glyphicon-arrow-left"></span> <%= link_to "Back to all products", "/products" %></button>
     <button class="btn btn-block"><span class="glyphicon glyphicon-remove"></span> <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></button>
+    <% end %>
+    <button class="btn btn-block"><span class="glyphicon glyphicon-arrow-left"></span> <%= link_to "Back to all products", "/products" %></button>
 
     <%= form_tag '/carted_products', method: :post do %>
     <div class="form-group">

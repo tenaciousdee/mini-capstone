@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
   def index
     @products = Product.all
 
@@ -26,6 +27,7 @@ class ProductsController < ApplicationController
       products = Product.all
       products.sample
     end
+ 
   end
 
   def new
@@ -74,5 +76,13 @@ class ProductsController < ApplicationController
 
     render :index
   end
+
+  # private
+
+  # def authenticate_admin!
+  #   unless current_user && current_user.admin
+  #     redirect_to "/"
+  #   end
+  # end
 
 end

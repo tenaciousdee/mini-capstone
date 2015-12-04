@@ -24,11 +24,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+      <% if current_user && current_user.admin %>
         <li class="active"><a href="/products/new">Add a new product <span class="sr-only">(current)</span></a></li>
+        <% end %>
         <li><a href="/products?sort_sale=price">Sale</a></li>
         <li><a href="/users/sign_in">Sign In</a></li>
         <li><a href="/users/sign_up">Sign Up</a></li>
-        <li><%= link_to "Cart", "/users/#{current_user.id}/cart" %></li>
+        <% if current_user && current_user.admin %>
+        <li><a href="/users/#{current_user.id}/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart (<%= @cart_count %>)</a></li>
+        <% end %>
         <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
         <% Category.all.each do |category| %>
         <li><a href="/products?category=<%= category.name %>"><%= category.name.capitalize %></a></li>
