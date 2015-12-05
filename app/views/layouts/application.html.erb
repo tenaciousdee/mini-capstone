@@ -31,7 +31,7 @@
         <li><a href="/users/sign_in">Sign In</a></li>
         <li><a href="/users/sign_up">Sign Up</a></li>
         <% if current_user && current_user.admin %>
-        <li><a href="/users/#{current_user.id}/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart (<%= @cart_count %>)</a></li>
+        <li><%= link_to "Cart (#{@cart_count})", "/users/#{current_user.id}/cart" %></li>
         <% end %>
         <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
         <% Category.all.each do |category| %>

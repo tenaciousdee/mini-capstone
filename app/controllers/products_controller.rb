@@ -31,18 +31,22 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
   end
 
   def create
-    product = Product.create(
+    @product = Product.new(
       name: params[:name],
       price: params[:price],
-      image: params[:image],
       description: params[:description]
       )
 
+    if @product.update
     flash[:success] = "Product was successfully created"
     redirect_to action: "index"
+  else
+    render :new
+  end
   end
 
   def edit
@@ -50,17 +54,19 @@ class ProductsController < ApplicationController
   end
 
   def update
-    product = Product.find_by(id: params[:id])
-    product.update(
+    @product = Product.find_by(id: params[:id])
+    if @product.update(
       name: params[:name],
       price: params[:price],
       description: params[:description],
       user_id: current_user.id
       )
 
-
     flash[:success] = "Product was successfully updated"
     redirect_to action: "show"
+  else
+    render :edit
+  end
   end
 
   def destroy
