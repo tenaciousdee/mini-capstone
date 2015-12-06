@@ -32,13 +32,15 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @suppliers = Supplier.where(active:true)
   end
 
   def create
     @product = Product.new(
       name: params[:name],
       price: params[:price],
-      description: params[:description]
+      description: params[:description],
+      supplier_id: params[:supplier][:supplier_id]
       )
 
     if @product.update

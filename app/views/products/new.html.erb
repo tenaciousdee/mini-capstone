@@ -1,13 +1,13 @@
 <% if @product.errors.any? %>
-  <div id="error_explanation">
-    <h3><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
- 
-    <ul>
+<div id="error_explanation">
+  <h3><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
+  
+  <ul>
     <% @product.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <li><%= msg %></li>
     <% end %>
-    </ul>
-  </div>
+  </ul>
+</div>
 <% end %>
 
 <h1>New Product</h1>
@@ -25,6 +25,11 @@
 <div class="form-group">
   <%= label_tag :description %>
   <%= text_area_tag :description, @product.description, class: "form-control", placeholder: "Product description" %>
+</div>
+
+<div>
+  <%= label_tag :supplier %>
+  <%= collection_select :supplier, :supplier_id, @suppliers, :id, :name %>
 </div>
 
 <div>
